@@ -58,7 +58,7 @@ Evaluation (MLflow Metrics)
 
 - **Script:** `src/train.py`
 - **Model:** Random Forest Classifier
-- **Output:** `models/model.pkl`
+- **Output:** `models/model.joblib`
 
 **MLflow logs:**
 - Hyperparameters  
@@ -85,7 +85,7 @@ Evaluation (MLflow Metrics)
 │   └── processed
 │       └── data.csv
 ├── models
-│   └── model.pkl
+│   └── model.joblib
 ├── src
 │   ├── preprocess.py
 │   ├── train.py
@@ -119,7 +119,7 @@ dvc stage add -n preprocess \
 dvc stage add -n train \
     -p train.data,train.model,train.random_state,train.n_estimators,train.max_depth \
     -d src/train.py -d data/processed/data.csv \
-    -o models/model.pkl \
+    -o models/model.joblib \
     python src/train.py
 ```
 
@@ -129,7 +129,7 @@ dvc stage add -n train \
 
 ```bash
 dvc stage add -n evaluate \
-    -d src/evaluate.py -d models/model.pkl -d data/processed/data.csv \
+    -d src/evaluate.py -d models/model.joblib -d data/processed/data.csv \
     python src/evaluate.py
 ```
 
@@ -140,8 +140,8 @@ dvc stage add -n evaluate \
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/Ingle-Santosh/diabetes-prediction-dvc-mlflow-mlops.git
+cd diabetes-prediction-dvc-mlflow-mlops
 ```
 
 ---
