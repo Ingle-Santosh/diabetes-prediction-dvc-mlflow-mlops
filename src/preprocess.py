@@ -17,7 +17,7 @@ def preprocess(input_path, output_path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     # Save processed data
-    data.to_csv(output_path, header=None, index=False)
+    data.to_csv(output_path, index=False)
 
     print(f"Preprocessed data saved to {output_path}")
 

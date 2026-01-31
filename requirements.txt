@@ -1,6 +1,11 @@
+# COre Dependencies
+pandas
+numpy
+scikit-learn
+
+# versioning and experiment tracking
 dvc
 dvc-s3
 dagshub
-scikit-learn
 mlflow
-pandas
+python-dotenv
